@@ -27,7 +27,7 @@ const Drawer = DrawerNavigator({
 
 
 
-Drawer.navigationOptions = ({ navigation}) => {
+Drawer.navigationOptions = ({ navigation }) => {
   return {
     title: 'HereNow',
     headerStyle: {backgroundColor: 'rgba(0, 124, 220, 100)'},

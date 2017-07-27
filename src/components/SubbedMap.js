@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import PostList from './PostList.js'
+import styles from '../styles'
 
 export default class SubbedMap extends React.Component {
   constructor(props) {
@@ -42,12 +43,3 @@ export default class SubbedMap extends React.Component {
 }
 
 // <PostList navigation={this.props.navigation} messages={this.state.messages}/>
-
-const styles = StyleSheet.create({
-  app: {
-    backgroundColor: 'white',
-    borderRadius: 4,
-    borderWidth: 3.5,
-    borderColor: 'white',
-  },
-});

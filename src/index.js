@@ -2,23 +2,9 @@ import React from 'react';
 import { combineReducers, createStore } from 'redux';
 import { connect, Provider } from 'react-redux';
 import TestScreen from './components/TestScreen.js';
-import { AppNavigator, nav } from './Navigators.js';
+import { AppNavigator } from './Navigators.js';
+import appReducer from './reducer';
 
-//SANDBOX START
-function test(state = {}, action) {
-  switch (action.type) {
-    case 'SET_SUBS':
-      return {...state, subs: action.subs};
-    default:
-      return state;
-  }
-}
-//SANDBOX END
-
-const appReducer = combineReducers({
-  nav,
-  test
-});
 
 class App extends React.Component {
   constructor(props) {
@@ -48,10 +34,6 @@ const mapStateToProps = (state) => ({
 App = connect(mapStateToProps)(App);
 
 const store = createStore(appReducer);
-
-//SANDBOX START
-store.dispatch({type:'SET_SUBS', subs: ['local', 'events', 'today']});
-//SANDBOX END
 
 class Root extends React.Component {
   constructor(props) {

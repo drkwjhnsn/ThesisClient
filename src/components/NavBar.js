@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-import { TouchableOpacity, View, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, StyleSheet, Switch } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 // import Icon from 'react-native-vector-icons/FontAwesome';
@@ -37,6 +37,7 @@ const getDrawerHeader = navigation => (
   </View>
 );
 
-// {navigation.state.index === 0 && <Switch style={styles.slider}/>}
+// {navigation.state.index === 0 && <Switch />}
+
 
 export { getDrawerHeader };
