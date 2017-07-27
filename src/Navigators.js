@@ -4,6 +4,7 @@ import { DrawerNavigator, StackNavigator, DrawerItems } from 'react-navigation';
 import { store } from './';
 import TestScreen from './components/TestScreen.js';
 import SubbedMap from './components/SubbedMap.js';
+import { getDrawerHeader } from './components/NavBar.js';
 
 // const DynamicDrawer = (props) => (
 //   <ScrollView >
@@ -13,22 +14,28 @@ import SubbedMap from './components/SubbedMap.js';
 //     ]} />
 //   </ScrollView>
 // );
+
 const DynamicDrawer = (props) => (
   <ScrollView >
     <DrawerItems {...props} />
   </ScrollView>
 );
 
-// <DrawerItems {...props} items={[{routeName: 'Test', key: 'Test'}]} contentOptions={{items: [{routeName: 'Test', key: 'Test'}]}}/>
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//   },
-// });
-
 const Drawer = DrawerNavigator({
   Home: {screen: SubbedMap}
 }, {contentComponent: DynamicDrawer});
+
+
+
+Drawer.navigationOptions = ({ navigation}) => {
+  return {
+    title: 'HereNow',
+    headerStyle: {backgroundColor: 'rgba(0, 124, 220, 100)'},
+    headerTitleStyle: {color: 'white'},
+    headerTintColor: 'white',
+    headerLeft: getDrawerHeader(navigation),
+  }
+}
 
 const AppNavigator = StackNavigator({
   Drawer: {screen: Drawer},
